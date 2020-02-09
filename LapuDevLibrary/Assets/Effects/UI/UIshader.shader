@@ -15,7 +15,8 @@
 			Pass
 			{
 
-			ZWrite Off
+			
+			ZWrite Off//开启transparent,需要停写zbuff
 			Blend SrcAlpha OneMinusSrcAlpha // use alpha blending
 
 			CGPROGRAM
