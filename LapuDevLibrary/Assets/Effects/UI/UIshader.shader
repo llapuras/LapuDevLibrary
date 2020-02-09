@@ -43,18 +43,13 @@
 			v2f o;
 			o.pos = UnityObjectToClipPos(v.vertex);
 			o.texcoord = TRANSFORM_TEX(v.texcoord, _MainTex);
-			o.cubenormal = mul(UNITY_MATRIX_MV, float4(v.normal, 0));
-			UNITY_TRANSFER_FOG(o, o.pos);
 			return o;
 		}
 
 		fixed4 frag(v2f i) : SV_Target
 		{
 			fixed4 col = _Color * tex2D(_MainTex, i.texcoord);
-			//fixed4 cube = texCUBE(_ToonShade, i.cubenormal);
-			fixed4 c = fixed4(2.0f * col.rgb, col.a);
-			UNITY_APPLY_FOG(i.fogCoord, c);
-			return c;
+			return col;
 		}
 
 		ENDCG
