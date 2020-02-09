@@ -9,12 +9,16 @@
 		
 	SubShader
 		{
+			
 			Tags { "Queue" = "Transparent" "RenderType" = "Transparent" }
-
+			
 			Pass
 			{
-			CGPROGRAM
 
+			ZWrite Off
+			Blend SrcAlpha OneMinusSrcAlpha // use alpha blending
+
+			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
      		#pragma multi_compile_fog
@@ -52,7 +56,7 @@
 		fixed4 frag(v2f i) : SV_Target
 		{
 			fixed4 col = _Color * tex2D(_MainTex, i.texcoord);
-			col *= _Trasparence;
+			col.a = _Trasparence;
 			return col;
 		}
 
