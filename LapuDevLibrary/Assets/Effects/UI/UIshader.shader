@@ -4,24 +4,27 @@
     {
 		_MainTex("Texture", 2D) = "white" {}
 		_Color("Color", Color) = (1, 0, 0, 0)
+		_Trasparence("Trasnparence", Range(0,1)) = 0.5
 	}
 		
 	SubShader
 		{
-			Tags { "RenderType" = "Opaque" }
+			Tags { "Queue" = "Transparent" "RenderType" = "Transparent" }
 
 			Pass
 			{
 			CGPROGRAM
+
 			#pragma vertex vert
 			#pragma fragment frag
-			#pragma multi_compile_fog
+     		#pragma multi_compile_fog
 
 			#include "UnityCG.cginc"
 
 			sampler2D _MainTex;
 			float4 _Color;
 			float4 _MainTex_ST;
+			float _Trasparence;
 
 		struct appdata
 		{
@@ -49,6 +52,7 @@
 		fixed4 frag(v2f i) : SV_Target
 		{
 			fixed4 col = _Color * tex2D(_MainTex, i.texcoord);
+			col *= _Trasparence;
 			return col;
 		}
 
