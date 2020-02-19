@@ -32,6 +32,9 @@ public class CameraControl : MonoBehaviour
     private Vector3 position;
     private float idleTimer = 0.0f;
     private float idleSmooth = 0.0f;
+    private Vector3 oldMousePos;
+    private Vector3 newMousePos;
+    private Vector3 MouseOffset;
 
     void Start() { Init(); }
     void OnEnable() { Init(); }
@@ -57,6 +60,16 @@ public class CameraControl : MonoBehaviour
         yDeg = desiredRotation.eulerAngles.x;// Vector3.Angle(Vector3.up, transform.up);
 
         position = targetObject.position - (Quaternion.Euler(yDeg, xDeg, 0f) * Vector3.forward * currentDistance + targetOffset);
+
+        oldMousePos = Input.mousePosition;
+    }
+
+    Vector3 GetMouseOffset()
+    {
+        newMousePos = Input.mousePosition;
+        MouseOffset = newMousePos - oldMousePos;
+        oldMousePos = newMousePos;
+        return MouseOffset;
     }
 
     void LateUpdate()
@@ -101,11 +114,17 @@ public class CameraControl : MonoBehaviour
             //transform.rotation = rotation;
         }
 
-        desiredDistance -= Input.GetAxis("Mouse ScrollWheel") * 0.02f * zoomSpeed * Mathf.Abs(desiredDistance);
+        if (Input.GetMouseButton(2))
+        {
+            MouseOffset = GetMouseOffset();
+        }
+
+            desiredDistance -= Input.GetAxis("Mouse ScrollWheel") * 0.02f * zoomSpeed * Mathf.Abs(desiredDistance);
         desiredDistance = Mathf.Clamp(desiredDistance, minDistance, maxDistance);
         currentDistance = Mathf.Lerp(currentDistance, desiredDistance, 0.02f * zoomDampening);
         position = targetObject.position - (rotation * Vector3.forward * currentDistance + targetOffset);
         transform.position = position;
+        transform.position += MouseOffset;
     }
 
     private static float ClampAngle(float angle, float min, float max)

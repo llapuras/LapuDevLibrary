@@ -66,6 +66,7 @@
     <Compile Include="Assets\MapGenerator\MapGenerator.cs" />
     <Compile Include="Assets\Scripts\CameraControl.cs" />
     <Compile Include="Assets\Scripts\Countdown.cs" />
+    <Compile Include="Assets\Scripts\selfrotate.cs" />
     <Compile Include="Assets\ThirdParty\UnityChan\Scripts\AutoBlink.cs" />
     <Compile Include="Assets\ThirdParty\UnityChan\Scripts\AutoBlinkforSD.cs" />
     <Compile Include="Assets\ThirdParty\UnityChan\Scripts\CameraController.cs" />
@@ -184,6 +185,7 @@
     <Compile Include="Assets\ThirdParty\UnityCommon\Runtime\Utilities\TransformUtils.cs" />
     <Compile Include="Assets\ThirdParty\UnityCommon\Runtime\Utilities\WebGLExtensions.cs" />
     <Compile Include="Assets\ThirdParty\UnityCommon\Runtime\Utilities\WebUtils.cs" />
+    <Compile Include="Assets\UnityInstantiate\GenerateObject.cs" />
     <Compile Include="Assets\Water\Standard Assets\Effects\ImageEffects\Scripts\Antialiasing.cs" />
     <Compile Include="Assets\Water\Standard Assets\Effects\ImageEffects\Scripts\Bloom.cs" />
     <Compile Include="Assets\Water\Standard Assets\Effects\ImageEffects\Scripts\BloomAndFlares.cs" />
@@ -230,10 +232,9 @@
     <None Include="Assets\Water\Standard Assets\Effects\ImageEffects\Shaders\GlobalFog.shader" />
     <None Include="Assets\Water\Standard Assets\Effects\ImageEffects\Shaders\VortexEffect.shader" />
     <None Include="Assets\Water\Standard Assets\Effects\ImageEffects\Shaders\NoiseAndGrain.shader" />
-    <None Include="Assets\small_item_effect\Shader\ToonIce.shader" />
     <None Include="Assets\Water\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\DLAA.shader" />
     <None Include="Assets\Water\Standard Assets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
-    <None Include="Assets\Ice\ToonIceRefracted.shader" />
+    <None Include="Assets\ShadersSample\Shaders\Ice\ToonIceRefracted.shader" />
     <None Include="Assets\Water\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset3.shader" />
     <None Include="Assets\Water\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlurDX11.shader" />
     <None Include="Assets\ThirdParty\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
@@ -262,11 +263,11 @@
     <None Include="Assets\Water\Standard Assets\Effects\ImageEffects\Shaders\RadialBlur.shader" />
     <None Include="Assets\Water\Standard Assets\Effects\ImageEffects\Shaders\ScreenSpaceRaytrace.cginc" />
     <None Include="Assets\small_item_effect\Shader\MaskShader.shader" />
-    <None Include="Assets\Toon\ToonLitOutline.shader" />
+    <None Include="Assets\ShadersSample\Shaders\Toon\ToonLitOutline.shader" />
     <None Include="Assets\Water\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\VignetteShader.shader" />
     <None Include="Assets\Water\Standard Assets\Effects\ImageEffects\Shaders\MotionBlurClear.shader" />
     <None Include="Assets\ThirdParty\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
-    <None Include="Assets\Ice\Refraction.shader" />
+    <None Include="Assets\ShadersSample\Shaders\Ice\Refraction.shader" />
     <None Include="Assets\ThirdParty\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
     <None Include="Assets\Water\Standard Assets\Effects\ImageEffects\Shaders\SepiaToneEffect.shader" />
     <None Include="Assets\Water\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrection3DLut.shader" />
@@ -280,12 +281,11 @@
     <None Include="Assets\Water\Standard Assets\Effects\ImageEffects\Shaders\FisheyeShader.shader" />
     <None Include="Assets\Water\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
     <None Include="Assets\Water\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter.shader" />
-    <None Include="Assets\small_item_effect\Shader\SpriteOutline.shader" />
     <None Include="Assets\Water\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
     <None Include="Assets\Water\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBloom.shader" />
     <None Include="Assets\Water\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendForBloom.shader" />
     <None Include="Assets\Water\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfField34.shader" />
-    <None Include="Assets\Toon\ToonLit.shader" />
+    <None Include="Assets\ShadersSample\Shaders\Toon\ToonLit.shader" />
     <None Include="Assets\Water\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
     <None Include="Assets\Water\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfFieldDX11.shader" />
     <None Include="Assets\Water\Shaders\SimpleWater.shader" />
@@ -306,28 +306,29 @@
     <None Include="Assets\Water\Standard Assets\Effects\ImageEffects\Shaders\NoiseAndGrainDX11.shader" />
     <None Include="Assets\ThirdParty\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
     <None Include="Assets\Water\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
-    <None Include="Assets\Toon\ToonBasic.shader" />
+    <None Include="Assets\ShadersSample\Shaders\Toon\ToonBasic.shader" />
     <None Include="Assets\Water\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
     <None Include="Assets\Water\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
     <None Include="Assets\Effects\Minimal.shader" />
     <None Include="Assets\Water\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfFieldScatter.shader" />
-    <None Include="Assets\Ice\ToonIce.shader" />
-    <None Include="Assets\small_item_effect\Shader\Refraction.shader" />
+    <None Include="Assets\ShadersSample\Shaders\Ice\ToonIce.shader" />
     <None Include="Assets\Water\Standard Assets\Effects\ImageEffects\Shaders\EdgeDetectNormals.shader" />
     <None Include="Assets\Water\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
     <None Include="Assets\Water\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA2.shader" />
     <None Include="Assets\Water\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderYUV.shader" />
-    <None Include="Assets\small_item_effect\Shader\ToonIceRefracted.shader" />
     <None Include="Assets\Water\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Luminance.shader" />
     <None Include="Assets\Water\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
     <None Include="Assets\Water\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\NFAA.shader" />
     <None Include="Assets\ThirdParty\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
-    <None Include="Assets\Toon\ToonBasicOutline.shader" />
+    <None Include="Assets\ShadersSample\Shaders\Toon\ToonBasicOutline.shader" />
     <None Include="Assets\Water\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset2.shader" />
     <None Include="Assets\Water\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\TiltShiftHdrLensBlur.shader" />
     <None Include="Assets\ThirdParty\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/GameDev/LapuDevLibrary/LapuDevLibrary/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.PixelPerfect.Editor">
+      <HintPath>D:/GameDev/LapuDevLibrary/LapuDevLibrary/Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>D:/GameDev/LapuDevLibrary/LapuDevLibrary/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
@@ -347,23 +348,20 @@
     <Reference Include="Unity.Rider.Editor">
       <HintPath>D:/GameDev/LapuDevLibrary/LapuDevLibrary/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>D:/GameDev/LapuDevLibrary/LapuDevLibrary/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Tilemap.Editor">
+      <HintPath>D:/GameDev/LapuDevLibrary/LapuDevLibrary/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.PixelPerfect">
+      <HintPath>D:/GameDev/LapuDevLibrary/LapuDevLibrary/Library/ScriptAssemblies/Unity.2D.PixelPerfect.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>D:/GameDev/LapuDevLibrary/LapuDevLibrary/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>D:/GameDev/LapuDevLibrary/LapuDevLibrary/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>D:/GameDev/LapuDevLibrary/LapuDevLibrary/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>D:/GameDev/LapuDevLibrary/LapuDevLibrary/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.PixelPerfect.Editor">
-      <HintPath>D:/GameDev/LapuDevLibrary/LapuDevLibrary/Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.PixelPerfect">
-      <HintPath>D:/GameDev/LapuDevLibrary/LapuDevLibrary/Library/ScriptAssemblies/Unity.2D.PixelPerfect.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>D:/Unity/2019.3.0f6/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

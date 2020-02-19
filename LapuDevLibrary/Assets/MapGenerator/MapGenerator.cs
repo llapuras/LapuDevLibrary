@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MapGenerator : MonoBehaviour
 {
+
+    public GameObject gridTex;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,4 +19,8 @@ public class MapGenerator : MonoBehaviour
         
     }
 
+    void DrawGrid()
+    {
+    
+    }
 }
