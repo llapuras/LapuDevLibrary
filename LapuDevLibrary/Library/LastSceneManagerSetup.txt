@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/small_item_effect/Display.unity
+- path: Assets/MapGenerator/MapEditor.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
