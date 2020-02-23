@@ -16,15 +16,21 @@ public class PlaceObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        mousepos = Input.mousePosition;
+        mousepos.z = 10;
+
+        mousepos = Camera.main.ScreenToWorldPoint(mousepos);
 
         if (Input.GetMouseButtonDown(0))
         {
-            mousepos = Input.mousePosition;
-            mousepos.z = 10;
-
-            mousepos = Camera.main.ScreenToWorldPoint(mousepos);
+          
+  
             go = Instantiate(curGo, mousepos, Quaternion.identity) as GameObject;
         }
+
+        if(go!=null)
+
+        go.transform.position = mousepos;
 
 
     }
