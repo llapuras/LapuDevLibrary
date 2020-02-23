@@ -23,8 +23,6 @@ public class PlaceObject : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-          
-  
             go = Instantiate(curGo, mousepos, Quaternion.identity) as GameObject;
         }
 
