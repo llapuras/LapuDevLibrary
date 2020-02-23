@@ -119,12 +119,12 @@ public class CameraControl : MonoBehaviour
             MouseOffset = GetMouseOffset();
         }
 
-            desiredDistance -= Input.GetAxis("Mouse ScrollWheel") * 0.02f * zoomSpeed * Mathf.Abs(desiredDistance);
+        desiredDistance -= Input.GetAxis("Mouse ScrollWheel") * 0.02f * zoomSpeed * Mathf.Abs(desiredDistance);
         desiredDistance = Mathf.Clamp(desiredDistance, minDistance, maxDistance);
         currentDistance = Mathf.Lerp(currentDistance, desiredDistance, 0.02f * zoomDampening);
-        position = targetObject.position - (rotation * Vector3.forward * currentDistance + targetOffset);
+        position = targetObject.position - (rotation * Vector3.forward * currentDistance + targetOffset) - MouseOffset;
+        //Debug.Log(MouseOffset);
         transform.position = position;
-        transform.position += MouseOffset;
     }
 
     private static float ClampAngle(float angle, float min, float max)
